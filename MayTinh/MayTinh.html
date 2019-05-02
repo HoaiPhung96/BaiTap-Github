@@ -7,42 +7,50 @@
     <title>MayTinh</title>
 </head>
 <body>
-	<h2>Calculator</h2>
+	<h2>Ứng dụng máy tính</h2>
 	<script>
-		function a_addition_b(form) {
+		function cong(form) {
 			a=eval(form.a.value)
 			b=eval(form.b.value)
-			c=a+b
-			form.ans.value = c
+			let result =a+b
+			document.getElementById("namecaculator").innerHTML = " Addition : ";
+        	document.getElementById("result").innerHTML = result;
 		}
-		function a_subtraction_b(form) {
+		function tru(form) {
 			a=eval(form.a.value)
 			b=eval(form.b.value)
-			c=a-b
-			form.ans.value=c
+			let result =a-b
+			document.getElementById("namecaculator").innerHTML = " Suctraction : ";
+          document.getElementById('result').innerHTML = result;
 		}
-		function a_multiplication_b(form) {
+		function nhan(form) {
 			a=eval(form.a.value)
 			b=eval(form.b.value)
-			c=a*b
-			form.ans.value=c
+			let result =a*b
+			document.getElementById("namecaculator").innerHTML = " Multiplication : ";
+           document.getElementById('result').innerHTML = result;
 		}
-		function a_division_b(form) {
+		function chia(form) {
 			a=eval(form.a.value)
 			b=eval(form.b.value)
-			c=a/b
-			form.ans.value = c
+			let result =a/b
+			document.getElementById("namecaculator").innerHTML = " Division : ";
+          document.getElementById('result').innerHTML = result;
 		}
 	</script>
-	<form name="formMT">
+	<form name="formx">
 		<h2><input type="number" size="4" value="2" name="a">
             <input type="number" size="4" value="2" name="b"><br>
-			<input type="button" value="addition (+) " onClick="a_addition_b(this.form)">
-			<input type="button" value="subtraction (-) " onClick="a_subtraction_b(this.form)">
-			<input type="button" value="multiplication (x) " onClick="a_multiplication_b(this.form)">
-            <input type="button" value="division (/)" onClick="a_division_b(this.form)"><br>
-            <p>Kết quả: <output name="ans" ></output></p>
-        </h2>
+			<input type="button" value="addition (+) " onClick="cong(this.form)">
+			<input type="button" value="subtraction (-) " onClick="tru(this.form)">
+			<input type="button" value="multiplication (x) " onClick="nhan(this.form)">
+            <input type="button" value="division (/)" onClick="chia(this.form)"><br>
+		</h2>
+		<p>
+			<div>Result</div>
+			<div id="namecaculator"></div>
+			<div id="result"></div>
+		</p>
 		</form>
 
 	</body>
