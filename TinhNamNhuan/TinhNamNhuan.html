@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tinh Nam Nhuan</title>
+</head>
+<body>
+    <script>
+        var year = parseInt(prompt("Enter a year"));
+        var isLeapYear = false;
+        var isDivisibleBy4 = year % 4 == 0;
+        if(isDivisibleBy4){
+            var isDivisibleBy100 = year % 100 == 0;
+            if(isDivisibleBy100){
+                var isDivisibleBy400 = year % 400 == 0;
+                if(isDivisibleBy400){
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+        if(isLeapYear){
+            alert(year + " là một năm nhuận");
+        } else {
+            alert(year + " Không phải là năm nhuận");
+        }
+    </script>
+</body>
+</html>
