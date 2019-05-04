@@ -10,13 +10,11 @@
 
 <body>
     <script>
-        let message = (login == 'Employee') ?
-            'Hello' :
-            (login == 'Director') ?
-                'Greetings' :
-                (login == '') ?
-                    'No login' :
-                    '';
+        login = prompt('nhập "Employee" "Director"');
+        let message = (login == 'Employee') ? 'Hello' :
+            (login == 'Director') ? 'Greetings' :
+                (login == '') ? 'No login' : '';
+
         alert(message);
     </script>
 </body>
