@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MayTinh</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MayTinh</title>
 </head>
+
 <body>
 	<h2>Ứng dụng máy tính</h2>
 	<script>
 		function cong(form) {
-			a=eval(form.a.value)
-			b=eval(form.b.value)
-			let result =a+b
+			a = eval(form.a.value)
+			b = eval(form.b.value)
+			let result = a + b
 			document.getElementById("namecaculator").innerHTML = " Addition : ";
-        	document.getElementById("result").innerHTML = result;
+			document.getElementById("result").innerHTML = result;
 		}
 		function tru(form) {
-			a=eval(form.a.value)
-			b=eval(form.b.value)
-			let result =a-b
+			a = eval(form.a.value)
+			b = eval(form.b.value)
+			let result = a - b
 			document.getElementById("namecaculator").innerHTML = " Suctraction : ";
-          document.getElementById('result').innerHTML = result;
+			document.getElementById('result').innerHTML = result;
 		}
 		function nhan(form) {
-			a=eval(form.a.value)
-			b=eval(form.b.value)
-			let result =a*b
+			a = eval(form.a.value)
+			b = eval(form.b.value)
+			let result = a * b
 			document.getElementById("namecaculator").innerHTML = " Multiplication : ";
-           document.getElementById('result').innerHTML = result;
+			document.getElementById('result').innerHTML = result;
 		}
 		function chia(form) {
-			a=eval(form.a.value)
-			b=eval(form.b.value)
-			let result =a/b
+			a = eval(form.a.value)
+			b = eval(form.b.value)
+			let result = a / b
 			document.getElementById("namecaculator").innerHTML = " Division : ";
-          document.getElementById('result').innerHTML = result;
+			document.getElementById('result').innerHTML = result;
 		}
 	</script>
 	<form name="formx">
 		<h2><input type="number" size="4" value="2" name="a">
-            <input type="number" size="4" value="2" name="b"><br>
+			<input type="number" size="4" value="2" name="b"><br>
 			<input type="button" value="addition (+) " onClick="cong(this.form)">
 			<input type="button" value="subtraction (-) " onClick="tru(this.form)">
 			<input type="button" value="multiplication (x) " onClick="nhan(this.form)">
-            <input type="button" value="division (/)" onClick="chia(this.form)"><br>
+			<input type="button" value="division (/)" onClick="chia(this.form)"><br>
 		</h2>
 		<p>
-			<div>Result</div>
+			<!-- <div>Result</div>
 			<div id="namecaculator"></div>
-			<div id="result"></div>
+			<div id="result"></div> -->
+			Result	<span id="namecaculator" ></span>
+			<span id="result" ></span>
 		</p>
-		</form>
+	</form>
 
-	</body>
+</body>
+
 </html>
