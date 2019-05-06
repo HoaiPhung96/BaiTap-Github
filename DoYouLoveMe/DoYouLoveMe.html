@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Love</title>
+</head>
+
+<body style="background-color:deeppink">
+    <script type="text/javascript">
+        function yesClick() {
+            alert("Yes. you are right ");
+        }
+
+        function noHover() {
+            var x = Math.round(Math.random() * window.innerWidth);
+            var y = Math.round(Math.random() * window.innerHeight);
+            document.getElementById('btnNo').style.left = x + 'px';
+            document.getElementById('btnNo').style.top = y + 'px';
+        }
+    </script>
+    <br><br>
+    <h1 align="center" style="color:white"><b>Do you love me?</h1>
+    <b><input type="button" value="  YES  "class="btn btn-success" onclick="yesClick()" style="position:absolute; left:570px; top:130px;">
+    <b><input type="button"  class="btn btn-warning"  id="btnNo" value=" NO " onmouseover="noHover()"
+        style="position: absolute; left: 650px; top: 130px;">
+
+</body>
+
+</html>
