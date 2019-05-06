@@ -11,21 +11,17 @@
 <body>
     <h2>
         <script>
-            let weight;
-            let height;
-            weight = parseInt(prompt('nhập vào cân nặng'));
-            height = parseInt(prompt('nhập vào chiều cao "m"'));
-            bmi = weight / (height * height);
+            let weight = parseFloat(prompt('nhập vào cân nặng'));
+            let height = parseFloat(prompt('nhập vào chiều cao'));
+            let bmi = weight / (height * height);
             if (bmi < 18)
                 document.write("Underweight");
             else if (bmi < 25.0)
                 document.write("Normal");
             else if (bmi < 30.0)
                 document.write("Overweight");
-            else if (bmi > 30.0)
-                document.write("Obese");
             else
-                document.write("Fall");
+                document.write("Obese");
         </script>
     </h2>
 </body>
