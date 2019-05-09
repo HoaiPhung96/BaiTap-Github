@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faking Textarea on Typing</title>
+</head>
+
+<body>
+    <center>
+        <h2>Faking Textarea on Typing</h2>
+        <form name="f" type="cols: red">
+            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+        </form>
+    </center>
+</body>
+<script>
+    var a = new Array(),
+        n = "";
+    a[1] = 'C';
+    a[2] = 'O';
+    a[3] = 'D';
+    a[4] = 'E';
+    a[5] = ' ';
+    a[6] = 'G';
+    a[7] = 'Y';
+    a[8] = 'M';
+    a[9] = ' ';
+    a[10] = 'R';
+    a[11] = 'a';
+    a[12] = 'i';
+    a[13] = 's';
+    a[14] = 'i';
+    a[15] = 'n';
+    a[16] = 'g';
+    a[17] = ' ';
+    a[18] = 'T';
+    a[19] = 'h';
+    a[20] = 'e';
+    a[21] = ' ';
+    a[22] = 'B';
+    a[23] = 'a';
+    a[24] = 'r';
+    a[25] = '!';
+    a[26] = '!';
+    a[27] = '!';
+    a[28] = ' ';
+    a[29] = ' ';
+
+    function typeTextarea() {
+        t = document.f.txt.value;
+        j = t.length;
+        if (j > 0) {
+            for (var i = 1; i <= j; i++) {
+                n = n + a[i];
+                if (i == 29) {
+                    document.f.txt.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.f.txt.value = n;
+        n = "";
+        setTimeout("typeTextarea()", 1);
+    }
+</script>
+
+</html>
