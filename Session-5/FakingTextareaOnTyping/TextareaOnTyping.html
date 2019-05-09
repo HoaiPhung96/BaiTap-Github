@@ -11,14 +11,14 @@
 <body>
     <center>
         <h2>Faking Textarea on Typing</h2>
-        <form name="f" type="cols: red">
-            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+        <form name="f">
+            <textarea name=" txt " cols="40 " rows="10 " onkeydown="typeTextarea(); "></textarea>
         </form>
     </center>
 </body>
 <script>
     var a = new Array(),
-        n = "";
+        n = " ";
     a[1] = 'C';
     a[2] = 'O';
     a[3] = 'D';
@@ -56,14 +56,14 @@
             for (var i = 1; i <= j; i++) {
                 n = n + a[i];
                 if (i == 29) {
-                    document.f.txt.value = "";
-                    n = "";
+                    document.f.txt.value = " ";
+                    n = " ";
                 }
             }
         }
         document.f.txt.value = n;
-        n = "";
-        setTimeout("typeTextarea()", 1);
+        n = " ";
+        setTimeout("typeTextarea() ", 1);
     }
 </script>
 
