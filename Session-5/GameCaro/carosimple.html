@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>carosimple</title>
+</head>
+
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame"></p>
+    <input style="position:absolute; left:570px; top:380px;" type="button" value="Change Value" class="btn btn-primary" onclick="changeValue()">
+</body>
+
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 6; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0, 0);
+    }
+
+    for (let i = 0; i < 6; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 6; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = "<hr/>" + "<h1>" + "<center>" + data;
+
+    function changeValue() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 6; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 6; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + "<h1>" + "<center>" + data;
+    }
+</script>
+
+</html>
