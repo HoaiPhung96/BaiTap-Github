@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ChuyểnTiền</title>
 </head>
+
 <body>
-	<form action="" name="myform" onsubmit="return(convert());">
-		<table>
-			<thead>
-				<tr>
-					<th>Amount</th>
-					<th>&nbsp;&nbsp;&nbsp;</th>
-					<th>From Currency</th>
-					<th>&nbsp;&nbsp;</th>
-					<th>To Currency</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><input type="number" name="amount" value=""></td>
-					<td>&nbsp;&nbsp;&nbsp;</td>
-					<td>
-						<select name="f">
+    <form action="" name="myform" onsubmit="return(convert());">
+        <table>
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>&nbsp;&nbsp;&nbsp;</th>
+                    <th>From Currency</th>
+                    <th>&nbsp;&nbsp;</th>
+                    <th>To Currency</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="amount" value=""></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <select name="f">
 							<option value="fmy">Mỹ (USA)</option>
 							<option value="fvietnam">Việt Nam (VND)</option>
 						</select>
-					</td>
-					<td>&nbsp;&nbsp;&nbsp;</td>
-					<td>
-						<select name="t">
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <select name="t">
 							<option value="tvietnam" id="TVN">Việt Nam (VND)</option>
 							<option value="tmy" id="TUSA">Mỹ (USA)</option>
 						</select>
-					</td>
-					<td>&nbsp;&nbsp;&nbsp;</td>
-					<td><Button class="btn btn-sm btn-success" type="submit">Convert</Button></td>
-				</tr>
-			</tbody>
-				</table>
-	</form>
-		<div>Result:</div>
-		<div id="result"></div>
-			<script>
-				function convert(){
-				let amount = document.myform.amount.value;
-				let amountFloat = parseFloat(amount);
-				let result;
-				let fvalue = document.myform.f.value;
-				let tvalue = document.myform.t.value;
-			// Tính toán từng trường hợp chuyển đổi
-			if (fvalue == 'fvietnam' && tvalue == 'tmy')
-			{
-				result = amountFloat * (1/23000);
-			}
-			else if (fvalue == 'fmy' && tvalue == 'tvietnam'){
-				result = amountFloat * 23000;
-			}
-			else result = "Faill";
-			document.getElementById("result").innerHTML = result; // trả về giá trị result
-			event.preventDefault(); // Ngăn cản sự kiện submit mặc định
-		}
-	</script>
- </body>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td>
+                        <Button class="btn btn-sm btn-success" type="submit">Convert</Button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <span>Result:</span>
+    <span id="result"></span>
+    <script>
+        function convert() {
+            let amount = document.myform.amount.value;
+            let amountFloat = parseFloat(amount);
+            let result;
+            let fvalue = document.myform.f.value;
+            let tvalue = document.myform.t.value;
+            // Tính toán từng trường hợp chuyển đổi
+            if (fvalue == 'fvietnam' && tvalue == 'tmy') {
+                result = amountFloat * (1 / 23000);
+            } else if (fvalue == 'fmy' && tvalue == 'tvietnam') {
+                result = amountFloat * 23000;
+            } else result = "Faill";
+            document.getElementById("result").innerHTML = result; // trả về giá trị result
+            event.preventDefault(); // Ngăn cản sự kiện submit mặc định
+        }
+    </script>
+</body>
+
 </html>

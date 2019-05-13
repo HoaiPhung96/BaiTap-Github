@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo Ham</title>
+</head>
+
+<body>
+    <h2>Phần mềm tính bình phương của 1 số</h2>
+    <input type="text" id="input">
+    <input type="button" value="Square" onclick="ketqua()">
+    <div id="result"></div>
+</body>
+<script>
+    function square(number) {
+        let result = number * number;
+        return result;
+    }
+
+    function ketqua() {
+        var input = document.getElementById("input").value;
+        var result = square(input);
+        document.getElementById("result").innerHTML = "<h3>" + "Bình phương của " + input + " là: " + result;
+    }
+</script>
+
+</html>

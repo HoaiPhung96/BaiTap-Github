@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <h2>Dictionary</h2>
+    <div>
+        <select class="form-control" id="nhap" style="width: 220px; left: 20px">
+        <option>Hello</option>
+        <option>Friend</option>
+        <option>Skill</option>
+        <option>Succeed</option>
+      </select><br>
+    </div>
+    <input type="button" value="Translate" class="btn btn-primary" onclick="dich()" style="position:absolute; left:230px; top:63px;">
+    <div id="result"></div>
+</body>
+<script>
+    let english = ["Hello", "Friend", "Skill", "Succeed"];
+    let vietnam = ["Xin chào", "Bạn bè", "Kỹ năng", "Thành công"];
+
+    function dich() {
+        let nhap = document.getElementById("nhap").value;
+        for (let i = 0; i < english.length; i++) {
+            if (nhap == english[i]) {
+                document.getElementById("result").innerHTML = "<h4>" + "Việt Nam: " + vietnam[i];
+            }
+        }
+    }
+</script>
+
+</html>
