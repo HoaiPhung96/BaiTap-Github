@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="result"></div> -->
+</body>
+<script>
+    let sosanhsao = prompt('Tên ngôi sao: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus');
+    let saoArr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let saoArr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function myFunction(value) {
+        for (let i = 0; i < saoArr1.length; i++) {
+            if (value === saoArr1[i]) {
+                return saoArr2[i];
+            } else {
+                document.write("k");
+            }
+        }
+    }
+    let result = myFunction(sosanhsao);
+    document.write(result);
+</script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo Và Sử Dụng Hàm</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend><b>Bài 1 bình phương của 1 số</b></legend>
+        <input type="text" id="input">
+        <input type="button" value="Square" onclick="ketqua()">
+        <span id="result"></span>
+    </fieldset><br>
+    <fieldset>
+        <legend><b>Bài 2 diện tích hình tròn</b></legend>
+        <input type="number" id="input2">
+        <input type="button" value="Diện Tích" onclick="dienTichTron()">
+        <input type="button" value="Chu Vi" onclick="chuViTron()">
+        <span id="result2"></span>
+    </fieldset><br>
+    <fieldset>
+        <legend><b>Bài 4 Kiểm tra ký tự số</b></legend>
+        <input type="" id="inputB4">
+        <input type="button" value="Kiểm Tra" onclick="ktTrueFalse()">
+        <span id="resultB4"></span>
+    </fieldset><br>
+    <fieldset>
+        <legend><b>Bài 5 Find Min Array</b></legend>
+        <input type="" id="find1">
+        <input type="button" value="Add" onclick="add()">
+        <input type="button" value="Find Min" onclick="findmin()">
+        <span id="resultB5"></span>
+    </fieldset><br>
+</body>
+<script>
+    function square(number) {
+        let result = number * number;
+        return result;
+    }
+
+    function ketqua() {
+        var input = document.getElementById("input").value;
+        var result = square(input);
+        document.getElementById("result").innerHTML = "<h4>" + "Bình phương của " + input + " là: " + result;
+    }
+
+    function dienTichTron() {
+        let input2 = document.getElementById('input2').value;
+        const PI = 3.14;
+        let dientich = (input2 * input2) * PI;
+        document.getElementById('result2').innerHTML = "<h4>" + "Bán kính = " + input2 + " diện tích = " + dientich;
+    }
+
+    function chuViTron() {
+        let input2 = document.getElementById('input2').value;
+        const PI = 3.14;
+        let chuvi = (input2 * 2) * PI;
+        document.getElementById('result2').innerHTML = "<h4>" + "Bán kính = " + input2 + " chu vi = " + chuvi;
+    }
+
+    function ktTrueFalse() {
+        let inputB4 = document.getElementById('inputB4').value;
+        if (isNaN(inputB4) == true) {
+            document.getElementById('resultB4').innerHTML = inputB4 + " là kiểu chữ";
+        } else {
+            document.getElementById('resultB4').innerHTML = inputB4 + " là kiểu số";
+        }
+    }
+
+    let nhapArray = [];
+
+    function add() {
+        let soNguyenTo = document.getElementById('find1').value;
+        nhapArray.push(soNguyenTo);
+        document.getElementById('resultB5').innerHTML = "mảng dc thêm vào" + nhapArray.join(',');
+    }
+
+    function findmin() {
+        let min = nhapArray[0];
+        for (let i = 1; i < nhapArray.length; i++) {
+            if (min > nhapArray[i]) {
+                min = nhapArray[i];
+            }
+            document.getElementById('resultB5').innerHTML = "mảng dc thêm vào" + min;
+        }
+    }
+</script>
+
+</html>
