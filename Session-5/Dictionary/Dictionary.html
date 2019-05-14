@@ -17,10 +17,11 @@
         <option>Friend</option>
         <option>Skill</option>
         <option>Succeed</option>
-      </select><br>
+      </select>
     </div>
     <input type="button" value="Translate" class="btn btn-primary" onclick="dich()" style="position:absolute; left:230px; top:63px;">
-    <div id="result"></div>
+    <h3>Việt Nam</h3>
+    <input type="text" id="result" value="" style="width: 220px;">
 </body>
 <script>
     let english = ["Hello", "Friend", "Skill", "Succeed"];
@@ -30,7 +31,7 @@
         let nhap = document.getElementById("nhap").value;
         for (let i = 0; i < english.length; i++) {
             if (nhap == english[i]) {
-                document.getElementById("result").innerHTML = "<h4>" + "Việt Nam: " + vietnam[i];
+                document.getElementById("result").value = vietnam[i];
             }
         }
     }
