@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LT-Tạo Và SD Hàm</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Bài 1</legend>
+        <input type="button" onclick="clickMe()" value="Click Me">
+        <span id="result"></span>
+    </fieldset><br>
+    <fieldset>
+        <legend>Bài 2</legend>
+        <input type="number" id="input">
+        <input type="button" onclick="clickMe2()" value="Click Me">
+        <span id="result2"></span>
+    </fieldset><br>
+    <fieldset>
+        <legend>Bài 3</legend>
+        <input type="number" id="inputBai31">
+        <input type="number" id="inputBai32">
+        <input type="button" onclick="clickMe3()" value="Click Me">
+        <span id="result3"></span>
+    </fieldset>
+</body>
+<script>
+    function clickMe() {
+        document.getElementById("result").innerHTML = "hê lô mấy cưng!";
+    }
+
+    function clickMe2() {
+        let input = parseInt(document.getElementById("input").value);
+        document.getElementById("result2").innerHTML = "Kết quả: " + (input + 1);
+    }
+
+    function clickMe3() {
+        let inputBai31 = parseInt(document.getElementById("inputBai31").value);
+        let inputBai32 = parseInt(document.getElementById("inputBai32").value);
+        if (inputBai31 > inputBai32)
+            document.getElementById("result3").innerHTML = "Giá trị " + inputBai31 + " lớn hơn " + inputBai32;
+        else
+            document.getElementById("result3").innerHTML = "Kết quả: " + (inputBai31 + inputBai32);
+    }
+</script>
+
+</html>
