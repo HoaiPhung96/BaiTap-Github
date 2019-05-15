@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class HCN</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let Rectangle = function(width, height) {
+
+        this.width = width;
+        this.height = height;
+
+        this.getWidth = function() {
+            return width;
+        }
+        this.getHeight = function() {
+            return height;
+        }
+        this.getChuVi = function() {
+            return (width + height) * 2;
+        }
+        this.getDienTich = function() {
+            return width * height;
+        }
+    };
+
+    let result = new Rectangle(5, 10);
+    let width = result.getWidth();
+    let height = result.getHeight();
+    let chuVi = result.getChuVi();
+    let dienTich = result.getDienTich();
+
+    document.write("<h3>Chiều dài: " + height + "<br> Chiều rộng: " + width + "<br> Chu vi: " + chuVi + "<br> Diện tích: " + dienTich + "</h3>");
+</script>
+
+</html>
