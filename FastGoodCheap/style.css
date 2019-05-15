@@ -1,0 +1,115 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #eaeff3;
+    color: #000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.container {
+    margin-top: -50px;
+    width: 220px;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    top: 40px;
+    width: 72px;
+    height: 26px;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked+label.green:before {
+    background: #88a97a;
+}
+
+input[type="checkbox"]:checked+label.green:after {
+    background: #80c265;
+    transform: translateX(100%);
+}
+
+body.has-js input[type="checkbox"]:checked+label.blue:before {
+    background: #7b8aac;
+}
+
+body.has-js input[type="checkbox"]:checked+label.blue:after {
+    background: #6583c5;
+    transform: translateX(100%);
+}
+
+input[type="checkbox"]:checked+label.red:before {
+    background: #a77d83;
+}
+
+input[type="checkbox"]:checked+label.red:after {
+    background: #c0646c;
+    transform: translateX(100%);
+}
+
+input[type="checkbox"]:checked:focus+label.green:before {
+    background: #6d8f5f;
+}
+
+input[type="checkbox"]:checked:focus+label.green:after {
+    background: #61a048;
+}
+
+body.has-js input[type="checkbox"]:checked:focus+label.blue:before {
+    background: #58698d;
+}
+
+body.has-js input[type="checkbox"]:checked:focus+label.blue:after {
+    background: #4d68a4;
+}
+
+.such-an-elite-hacker {
+    display: none;
+    font-size: 0.6em;
+    text-align: center;
+    text-align: center;
+}
+
+input[type="checkbox"]+label {
+    display: block;
+    position: relative;
+    margin-bottom: 1.2em;
+}
+
+input[type="checkbox"]+label:before {
+    content: '';
+    display: inline-block;
+    width: 2.5em;
+    vertical-align: middle;
+    height: 1em;
+    background-color: #919191;
+    border-radius: .5em;
+    margin-right: 1em;
+    margin-top: -5px;
+    transition: all .5s ease;
+}
+
+input[type="checkbox"]+label:after {
+    content: '';
+    display: inline-block;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #d2d1d1;
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    transition: all .5s ease;
+    -webkit-box-shadow: 6px 6px 21px -5px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 6px 6px 21px -5px rgba(0, 0, 0, 0.61);
+    box-shadow: 6px 6px 21px -5px rgba(0, 0, 0, 0.61);
+}
