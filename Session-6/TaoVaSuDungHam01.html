@@ -27,6 +27,13 @@
         <input type="button" onclick="clickMe3()" value="Click Me">
         <span id="result3"></span>
     </fieldset>
+
+    <fieldset>
+        <legend>bài 5 tìm chòm sao của sao</legend>
+        <input type="text" id='inputSao'>
+        <button type="button" onclick="chomsao();">kết quả</button>
+        <span id="result5"></span>
+    </fieldset>
 </body>
 <script>
     function clickMe() {
@@ -45,6 +52,22 @@
             document.getElementById("result3").innerHTML = "Giá trị " + inputBai31 + " lớn hơn " + inputBai32;
         else
             document.getElementById("result3").innerHTML = "Kết quả: " + (inputBai31 + inputBai32);
+    }
+
+    let saoArr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let saoArr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function chomsao() {
+        let timkiem = document.getElementById('inputSao').value;
+        for (let i = 0; i < saoArr1.length; i++) {
+            if (timkiem === saoArr1[i]) {
+                document.getElementById('result5').innerHTML = ' sao <b>' + saoArr1[i] + '</b> thuộc chòm sao <b>' + (saoArr2[i]);
+                break;
+            } else {
+                document.getElementById('result5').innerHTML = "<b>" + timkiem + '</b> tên sao không đúng';
+            }
+        }
+
     }
 </script>
 
