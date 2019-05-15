@@ -5,21 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KiemTraSNT</title>
+    <title>KT So Nguyen To</title>
 </head>
 
 <body>
-
+    <form>
+        <h3>Kiểm Tra số Nguyên Tố</h3>
+        <input type="number" id="inputSnt">
+        <input type="button" value="Check!" onclick="showSnt()"><br>
+        <div id="result"></div>
+    </form>
 </body>
 <script>
-    let soNuyenTo = prompt('nhập số bất kì');
-
-    function soNuyenTo(number) {
-        for (let i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i === 0)
-                alert(soNuyenTo + "khong phải là snt");
+    function showSnt() {
+        let inputSnt = document.getElementById("inputSnt").value;
+        let ketqua = "";
+        for (let i = 0; i <= inputSnt; i++) {
+            if (kiemtra(i) == true) {
+                ketqua += i + "  ";
+                document.getElementById("result").innerHTML = ketqua;
+            }
         }
-        alert(soNuyenTo + "la snt");
+    }
+
+    function kiemtra(n) {
+        let kiemtra = false;
+        let count = 0;
+        if (n < 2)
+            return false;
+        else {
+            for (let j = 2; j < (n / 2); j++)
+                if (n % j == 0)
+                    count += 1;
+            if (count === 0)
+                kiemtra = true;
+            else
+                kiemtra = false;
+        }
+        return kiemtra;
     }
 </script>
 
