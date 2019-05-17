@@ -9,14 +9,11 @@
 </head>
 
 <body>
-
 </body>
 <script>
     let Rectangle = function(width, height) {
-
         this.width = width;
         this.height = height;
-
         this.getWidth = function() {
             return width;
         }
@@ -30,13 +27,11 @@
             return width * height;
         }
     };
-
     let result = new Rectangle(5, 10);
     let width = result.getWidth();
     let height = result.getHeight();
     let chuVi = result.getChuVi();
     let dienTich = result.getDienTich();
-
     document.write("<h3>Chiều dài: " + height + "<br> Chiều rộng: " + width + "<br> Chu vi: " + chuVi + "<br> Diện tích: " + dienTich + "</h3>");
 </script>
 
