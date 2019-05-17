@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Temperature</title>
+</head>
+
+<body>
+    <form>
+        <h2>Conver °C to °F ,°K </h2>
+        <p>
+            Celsius:
+            <input type="number" placeholder="Celsius" id="idCelsius">
+            <input type="button" onclick="clickCtoFK()" value="Conver"> </p>
+        <p>Fahrenheit: <span id="converF"></span></p>
+        <p>Kenvin: <span id="converK"></span></p>
+    </form>
+</body>
+<script>
+    let Temperature = function(idCelsius) {
+        this.idCelsius = idCelsius;
+        this.getFahrenheit = function() {
+            return this.idCelsius * 1.800 + 32;
+        }
+        this.getKenvin = function() {
+            return this.idCelsius + 273.15;
+        }
+    };
+
+    function clickCtoFK() {
+        let result = parseFloat(document.getElementById('idCelsius').value);
+        let conver = new Temperature(result);
+        let getFahrenheit = conver.getFahrenheit();
+        let getKenvin = conver.getKenvin();
+        document.getElementById('converF').innerHTML = getFahrenheit;
+        document.getElementById('converK').innerHTML = getKenvin;
+    }
+</script>
+
+</html>
