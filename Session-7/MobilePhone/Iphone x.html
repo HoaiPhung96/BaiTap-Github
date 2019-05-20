@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>IPHONE X</title>
+</head>
+
+<body>
+    <div class="row container">
+        <div class="col-lg-6">
+            <h2>IPhone X</h2>
+            <div class="khung">
+                <input type="image" id="signal" alt="Login" src="image/signal.png"> &emsp;&emsp;
+                <span id="clock"></span>
+                <input type="image" id="battery" alt="Login" src="image/battery.png">
+                <div class="main">
+                    <div id="showMessIP" style="display:none;">
+                        <textarea class="form-control" rows="3" id="sendMess"></textarea>
+                        <input type="button" value="Gửi tin 💌" class="btn btn-success" onclick="guimessage()">
+                        <input type="button" value="Nhận tin 📩" class="btn btn-outline-info">
+                    </div>
+                </div>
+                <div class="menu">
+                    <input type="image" id="phone" alt="Login" src="image/phone.png">
+                    <input type="image" id="sms" alt="Login" src="image/message.png" onclick="sendMessIP()">
+                    <input type="image" id="contacts" alt="Login" src="image/contacts.png">
+                    <input type="image" id="settings" alt="Login" src="image/settings.png">
+                    </br>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <h2>Samsung S10+</h2>
+            <div class="khung">
+                <input type="image" id="signal" alt="Login" src="image/signal.png">&emsp;&emsp;
+                <span id="clockss"></span>
+                <input type="image" id="battery" alt="Login" src="image/battery.png">
+                <div class="main">
+                    <div id="showMessSS" style="display:none;">
+                        <textarea class="form-control" rows="3" id="nhanMess"></textarea>
+                        <input type="button" value="Gửi tin 💌" class="btn btn-success">
+                        <input type="button" value="Nhận tin 📩" class="btn btn-outline-info" onclick="nhanmessage()">
+                    </div>
+                </div>
+                <div class="menu">
+                    <input type="image" id="phone" alt="Login" src="image/ssphone.png">
+                    <input type="image" id="sms" alt="Login" src="image/ssmessages.png" onclick="sendMessSS()">
+                    <input type="image" id="contacts" alt="Login" src="image/sscontacts.png">
+                    <input type="image" id="settings" alt="Login" src="image/sssettings.png">
+                    </br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function Mobile() {
+        this.hopthuden = [];
+        this.hopthudi = [];
+        this.dagui = [];
+        this.status = true;
+        this.setmessage = function(tinnhan) {
+            this.tinnhan = tinnhan;
+        }
+        this.getmessage = function() {
+            return this.tinnhan;
+        }
+        this.sendmessage = function(message) {
+            this.hopthudi.push(message);
+        }
+        this.laymessage = function(message) {
+            this.hopthuden.push(message);
+            return this.hopthuden[0];
+        }
+    };
+
+    let samsung = new Mobile(100);
+    let Iphone = new Mobile(100);
+
+    function guimessage() {
+        let tinnhan = document.getElementById("sendMess").value;
+        samsung.sendmessage(tinnhan);
+        Iphone.laymessage(tinnhan);
+        document.getElementById('sendMess').value = '';
+    }
+
+    function nhanmessage() {
+        let nhantin = Iphone.laymessage();
+        document.getElementById("nhanMess").value = nhantin;
+    }
+
+    // send icon
+    function sendMessIP() {
+        var x = document.getElementById("showMessIP");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function sendMessSS() {
+        var x = document.getElementById("showMessSS");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    //clock
+    function refrClock() {
+
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        var am_pm;
+
+        if (s < 10) {
+            s = "0" + s
+        }
+
+        if (m < 10) {
+            m = "0" + m
+        }
+
+        if (h > 12)
+
+        {
+            h -= 12;
+            AM_PM = "PM"
+        } else {
+            AM_PM = "AM"
+        }
+
+        if (h < 10) {
+            h = "0" + h
+        }
+
+        document.getElementById("clock").innerHTML = "😂" + h + ":" + m + ":" + s + "😂";
+        setTimeout("refrClock()", 1000);
+        document.getElementById("clockss").innerHTML = "😂" + h + ":" + m + ":" + s + "😂";
+        setTimeout("refrClock()", 1000);
+    }
+    refrClock();
+</script>
+
+</html>
