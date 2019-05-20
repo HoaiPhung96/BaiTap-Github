@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>công tắc và bóng đèn</title>
+</head>
+
+<body>
+    <center>
+        <h4>Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</h4><br>
+        <span id="result"></span><br>
+        <input type="button" class="btn btn-outline-warning" value="On / Off" onclick="onlamp();">
+    </center>
+</body>
+<script>
+    function ElectricLamp() {
+        this.status = false;
+
+        this.turn = function() {
+            if (this.status === false)
+                return "<h3>" + "Đèn tắt";
+            else return "<h3>" + "Đèn sáng";
+        }
+
+    }
+
+
+    function SwitchButton(lamp) {
+        this.status = false;
+        this.connectToLamp = function() {
+            if (this.status === false)
+                this.status = true;
+            else this.status = false;
+        }
+        this.switchOff = function() {
+            if (this.status === false) {
+                lamp.status = false;
+            }
+        }
+        this.switchOn = function() {
+            if (this.status === true) {
+                lamp.status = true;
+            }
+        }
+    }
+    let lamp = new ElectricLamp();
+    let button = new SwitchButton(lamp);
+
+    function onlamp() {
+        button.connectToLamp();
+        button.switchOff();
+        button.switchOn();
+        document.getElementById("result").innerHTML = lamp.turn();
+    }
+</script>
+
+</html>
