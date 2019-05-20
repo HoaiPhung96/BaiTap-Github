@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Adam & Eva</title>
+</head>
+
+<body>
+    <center><br><span id="show"></span><br><br>
+        <input type="button" value="Adam🤴" class="btn btn-outline-info" onclick="eatAdam()">&nbsp&nbsp
+        <input type="button" value="Eva 👸" class="btn btn-outline-info" onclick="eatEva()">
+    </center>
+</body>
+<script>
+    function Apple(weight) {
+        this.weight = 100;
+        this.decrease = function(weight) {
+            if (this.weight > 0)
+                this.weight--;
+            else return this.weight;
+        }
+        this.isEmpty = function(weight) {
+            if (this.weight > 0)
+                return false;
+            else true;
+        }
+        this.getWeight = function(weight) {
+            return this.weight;
+        }
+    }
+
+    function Human(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+        this.isMale = function(gender) {
+            if (this.gender = true)
+                return "nam";
+            else "nu";
+        }
+        this.setGender = function(gender) {
+            this.gender;
+        }
+        this.checkApple = function(apple) {
+            return this.apple.getWeight;
+
+        }
+        this.eat = function(tao) {
+            tao.decrease();
+        }
+        this.say = function() {
+
+        }
+        this.getName = function() {
+            return this.name;
+        }
+        this.setName = function() {
+            this.name;
+        }
+        this.getWeight = function() {
+            return this.weight;
+        }
+        this.setWeight = function() {
+            this.weight;
+        }
+    }
+    let applered = new Apple();
+    let human = new Human('Phung', true, 25);
+
+    function eatAdam() {
+        human.eat(applered);
+        document.getElementById('show').innerHTML = "<b>" + (applered.weight + 1) + " quả táo Adam ăn 1 quả còn lại " + applered.weight + " 🍏";
+    }
+
+    function eatEva() {
+
+        human.eat(applered);
+        document.getElementById('show').innerHTML = "<b>" + (applered.weight + 1) + " quả táo Eva ăn 1 quả còn lại " + applered.weight + " 🍏";
+    }
+</script>
+
+</html>
