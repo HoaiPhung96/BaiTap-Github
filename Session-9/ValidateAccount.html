@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate account</title>
+</head>
+
+<body>
+</body>
+<script>
+    function validateAccount(account) {
+        egexp = /^[_a-z0-9]{6,}$/;
+        if (egexp.test(account))
+            document.write("Cho phép dùng account này : " + account + "<br>");
+        else
+            document.write("Không được dùng account này : " + account + "<br>");
+
+    }
+    validateAccount("123abc_");
+    validateAccount("_abc123");
+    validateAccount("abcdefg");
+    validateAccount("______");
+    validateAccount(".@");
+    validateAccount("1234_  ");
+    validateAccount("abcde ");
+</script>
+
+
+</html>
