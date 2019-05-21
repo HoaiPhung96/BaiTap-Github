@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Regular expression to check string's first character is uppercase or not</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function is_usZipCode(str) {
+        regexp = /^[0-9]{5}(?:-[0-9]{4})?$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    var zipcode = "03201 - 2150";
+    document.write(is_usZipCode(zipcode) + '<br>');
+    zipcode = "7892";
+    document.write(is_usZipCode(zipcode) + '<br>');
+
+    function kiemtraZipCode(zipcode) {
+        egexp = /^(49)[0-9]{4}$/;
+        if (egexp.test(zipcode))
+            document.write('Đúng <br>');
+        else
+            document.write('Sai<br>');
+    }
+    var check = '490000';
+    kiemtraZipCode(check);
+</script>
+
+</html>
