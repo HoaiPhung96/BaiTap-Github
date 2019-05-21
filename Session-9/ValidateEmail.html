@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate Email</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function validateEmail(checkEmail) {
+        regexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/i;
+        if (regexp.test(checkEmail)) {
+            return true;
+        }
+        return false;
+    }
+    var ktEmail = "a@gmail.com";
+    document.write(validateEmail(ktEmail) + "<br>")
+    ktEmail = "ab@gmail.com";
+    document.write(validateEmail(ktEmail) + "<br>")
+    ktEmail = "@gmail.com";
+    document.write(validateEmail(ktEmail) + "<br>")
+    ktEmail = "ab@gmail.";
+    document.write(validateEmail(ktEmail) + "<br>")
+    ktEmail = "@#abc@gmail.com";
+    document.write(validateEmail(ktEmail) + "<br>")
+</script>
+
+</html>
