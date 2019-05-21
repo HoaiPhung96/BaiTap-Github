@@ -5,62 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FakingTextareaOnTyping</title>
+    <title>[Bài tập] Ứng dụng vui Faking Textarea on Typing</title>
 </head>
 
 <body>
-    <center>
-        <h2>Type anthing slowly</h2>
-        <form name="f">
-            <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
-        </form>
-    </center>
+    <h2>Faking Textarea on Typing</h2>
+    <form name="form">
+        <textarea name="txt" cols="40" rows="10" onkeydown="myArray();"></textarea>
+    </form>
 </body>
 <script>
-    var a = new Array(),
-        n = "";
-    a[1] = 'C';
-    a[2] = 'O';
-    a[3] = 'D';
-    a[4] = 'E';
-    a[5] = '-';
-    a[6] = 'G';
-    a[7] = 'Y';
-    a[8] = 'M';
-    a[9] = ' ';
-    a[10] = 'R';
-    a[11] = 'A';
-    a[12] = 'I';
-    a[13] = 'S';
-    a[14] = 'I';
-    a[15] = 'N';
-    a[16] = 'G';
-    a[17] = ' ';
-    a[18] = 'T';
-    a[19] = 'H';
-    a[20] = 'E';
-    a[21] = ' ';
-    a[22] = 'B';
-    a[23] = 'A';
-    a[24] = 'R';
-    a[25] = '!';
-    a[26] = '!';
+    let array = ['I', ' ', '♥', ' ', 'C', 'O', 'D', 'E', ' ', 'G', 'Y', 'M', '-', ' ', 'R', 'A', 'I', 'S', 'I', 'N', 'G', ' ', 'T', 'H', 'E', ' ', 'B', 'A', 'R', '!'];
+    let n = "";
 
-    function typeTextarea() {
-        t = document.f.txt.value;
+    function myArray() {
+        t = document.form.txt.value;
         j = t.length;
         if (j > 0) {
-            for (var i = 1; i <= j; i++) {
-                n = n + a[i];
-                if (i == 26) {
-                    document.f.txt.value = "";
+            for (var i = 0; i < j; i++) {
+                n = n + array[i];
+                if (i === 30) {
+                    document.form.txt.value = "";
                     n = "";
                 }
             }
         }
-        document.f.txt.value = n;
+        document.form.txt.value = n;
         n = "";
-        setTimeout("typeTextarea()", 1);
+        setTimeout("myArray()", 1);
+
     }
 </script>
 
