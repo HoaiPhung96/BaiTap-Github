@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate tên của lớp học</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function validateNameClass(name) {
+        egexp = /^[ACP][0-9]{4}[GHIKLM]$/;
+        if (egexp.test(name))
+            document.write("<b>" + name + " Tên này được sử dụng<br>");
+        else
+            document.write("<b>" + name + " Tên này không được dùng<br>");
+    }
+    validateNameClass("C0318G");
+    validateNameClass("M0318G");
+    validateNameClass("P0323A");
+</script>
+
+</html>
