@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validate Number Phone</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function validateNumberPhone(phonenumber) {
+        egexp = /^\((84)\)-\(0[0-9]{9}\)$/;
+        if (egexp.test(phonenumber))
+            document.write("đúng<br>");
+        else
+            document.write("sai<br>");
+    }
+    validateNumberPhone("a822222222")
+    validateNumberPhone("(84)-(0978489096)")
+</script>
+
+</html>
