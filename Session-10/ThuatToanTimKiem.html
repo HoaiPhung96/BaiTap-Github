@@ -11,7 +11,7 @@
 <body>
     <fieldset>
         <legend>Kiểm tra số nhà mạng Viettel</legend>
-        <input type="" id="input1">
+        <input type="number" id="input1">
         <input type="button" value="Check" onclick="validateNumberPhone()">
         <div id="result1"></div>
     </fieldset>
@@ -19,7 +19,7 @@
 <script>
     function validateNumberPhone(phonenumber) {
         let number = document.getElementById('input1').value;
-        egexp = /^(09)|(03)\([0-9]{8}\)$/;
+        egexp = /^(09)|(03)([0-9]{8})$/;
         if (egexp.test(number))
             document.getElementById('result1').innerHTML = "<b>Số: " + number + " là số của nhà mạng Viettel";
         else
