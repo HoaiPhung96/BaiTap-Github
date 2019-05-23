@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Min Max</title>
+</head>
+
+<body>
+    <h2>Tìm kiếm giá trị lớn nhất hoặc nhỏ nhất</h2>
+</body>
+<script>
+    function findMin(arr) {
+        var min = arr[0];
+        for (var i = 1; i < arr.length; ++i) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    function findMax(arr) {
+        var max = arr[0];
+        for (var i = 1; i < arr.length; ++i) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    var nums = [];
+    for (var i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random() * 101);
+        document.write(nums[i] + " ");
+    }
+    var minValue = findMin(nums);
+    document.write("<br/>");
+    document.write("The minimum value is: " + minValue);
+
+    var maxValue = findMax(nums);
+    document.write("<br/>");
+    document.write("The maximum value is: " + maxValue);
+</script>
+
+</html>
