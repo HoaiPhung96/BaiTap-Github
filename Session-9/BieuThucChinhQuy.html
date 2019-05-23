@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Bài 1: Check định dạng ngày tháng năm</legend>
+        <input type="" id="input1">
+        <input type="button" value="Check" onclick="dayMonthYear()">
+        <div id="result1"></div>
+    </fieldset>
+    <fieldset>
+        <legend>Bài 4: Kiểm tra mã số bảo mật ATM</legend>
+        <p>vui lòng nhập mã 4 số: xxxx</p>
+        <input type="number" id="input4">
+        <input type="button" value="Check" onclick="security()">
+        <div id="result4"></div>
+    </fieldset>
+</body>
+<script>
+    function dayMonthYear() {
+        let ddmmyy = document.getElementById('input1').value;
+        egexp = /^([0-9]|0[1-9]|[12][0-9]|3[01])\/([0-9]|0[1-9]|1[0-2])\/([0-9]){4}$/;
+        if (egexp.test(ddmmyy))
+            document.getElementById('result1').innerHTML = ddmmyy + " Định dạng ngày đúng";
+        else
+            document.getElementById('result1').innerHTML = ddmmyy + " Định dạng ngày sai";
+
+    }
+
+    function security() {
+        let matma = document.getElementById('input4').value;
+        egexp = /^[0-9]{4}$/;
+        if (egexp.test(matma))
+            document.getElementById('result4').innerHTML = matma + " Mã này hợp lệ"
+        else
+            document.getElementById('result4').innerHTML = matma + " Mã này không hợp lệ"
+    }
+</script>
+
+</html>

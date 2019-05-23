@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Làm việc với các đối tượng</title>
+</head>
+
+<body>
+    <table>
+        <h3>Nhập vào</h3>
+        <tr>
+            <td><b>Giây:</td>
+            <td><input type="number" id="idgiay" value="00"></td>
+        </tr>
+        <tr>
+            <td><b>Phút:</td>
+            <td><input type="number" id="idphut" value="00"></td>
+        </tr>
+        <tr>
+            <td><b>Giờ:</td>
+            <td><input type="number" id="idngay" value="07"></td>
+        </tr>
+        <tr>
+            <td><b>Ngày: </td>
+            <td><input type="number" id="idgio" value="06"></td>
+        </tr>
+        <tr>
+            <td><b>Tháng:</td>
+            <td><input type="number" id="idthang" value="05"></td>
+        </tr>
+        <tr>
+            <td><b>Năm:</td>
+            <td><input type="number" id="idnam" value="1996"></td>
+        </tr>
+        <tr>
+            <td><br>
+            <input type="button" value="Kiểm Tra" onclick="kiemtra()" ></br></td>
+        </tr>
+    </table>
+    <div id="resultNam"></div>
+    <div id="resultThang"></div>
+    <div id="resultNgay"></div>
+    <div id="resultGio"></div>
+    <div id="resultPhut"></div>
+    <div id="resultGiay"></div>
+</body>
+<script>
+function kiemtra(){
+let date = new Date();
+let giaysinh = document.getElementById('idgiay').value;
+let phutsinh = document.getElementById('idphut').value;
+let giosinh = document.getElementById('idngay').value;
+let ngaysinh = document.getElementById('idgio').value;
+let thangsinh = document.getElementById('idthang').value;
+let namsinh = document.getElementById('idnam').value;
+
+let giay = date.getSeconds() - giaysinh;
+let phut = date.getMinutes() - phutsinh;
+let gio = date.getHours() - giosinh;
+let ngay = date.getDay() - ngaysinh;
+let thang = date.getMonth() - thangsinh;
+let nam = date.getFullYear() - namsinh;
+
+document.getElementById('resultNam').innerHTML ="Bạn đã sống "+nam+" năm";
+document.getElementById('resultThang').innerHTML ="Bạn đã sống "+ nam *12 + thang+" tháng";
+document.getElementById('resultNgay').innerHTML ="Bạn đã sống "+(nam *12 + thang)*365 + ngay+" ngày";
+document.getElementById('resultGio').innerHTML = "Bạn đã sống "+((nam *12 + thang)*365 + ngay)*24 + gio+" giờ";
+document.getElementById('resultPhut').innerHTML ="Bạn đã sống "+(((nam *12 + thang)*365 + ngay)*24 + gio)*60+phut+" phút";
+document.getElementById('resultGiay').innerHTML ="Bạn đã sống "+ ((((nam *12 + thang)*365 + ngay)*24 + gio)*60+phut)*60+giay+" giây";
+}
+</script>
+</html>
