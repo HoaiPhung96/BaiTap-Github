@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột.</title>
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <tr><b>
+        <td>
+            <p id="mouse"></p>
+            <p id="speedrat"></p>
+            <p id="massrat"></p>
+            <p id="statusrat"></p>
+        </td>
+        <td>
+            <p id="cat"></p>
+            <p id="maxspeedcat"></p>
+            <p id="masscat"></p>
+        </td></b>
+    </tr>
+    <tr>
+        <input type="submit" id="catch" class="btn btn-warning" onclick="catchrat()" value="Bắt Chuột 🐹">
+    </tr>
+
+</body>
+<script>
+    function Mouse(name, mass, speed, status) {
+        this.name = name;
+        this.mass = mass;
+        this.speed = speed;
+        this.status = status;
+        this.speakingrat = function() {
+            console.log("Chít chít");
+        };
+        this.massratdie = function() {
+            this.mass -= this.mass;
+            return this.mass;
+        }
+    }
+
+    function Cat(name, mass, maxspeed) {
+        this.name = name;
+        this.mass = mass;
+        this.maxspeed = maxspeed;
+        this.speakingcat = function() {
+            console.log("meoww meoww");
+        }
+        this.masscateat = function() {
+            this.mass += mouse.mass;
+            return this.mass;
+        }
+    }
+    let mouse = new Mouse("Jerry", 1, 20, "Còn sống");
+    document.getElementById("mouse").innerHTML = "Tên : " + mouse.name;
+    document.getElementById("speedrat").innerHTML = "Tốc độ : " + mouse.speed + " km/h";
+    document.getElementById("massrat").innerHTML = "Trọng lượng : " + mouse.mass + " kg";
+    document.getElementById("statusrat").innerHTML = "Trạng thái : " + mouse.status;
+    let cat = new Cat("Tom", 7, 30);
+    document.getElementById("cat").innerHTML = "Tên : " + cat.name;
+    document.getElementById("masscat").innerHTML = "Trọng lượng : " + cat.mass + " kg";
+    document.getElementById("maxspeedcat").innerHTML = "Tốc độ tối da : " + cat.maxspeed + " km/s";
+
+    function catchrat() {
+        if (cat.maxspeed > mouse.speed) {
+            alert("Thông báo: Đã bắt được chuột");
+            cat.masscateat();
+            mouse.massratdie();
+            document.getElementById("statusrat").innerHTML = "Trạng thái: Đã chết";
+            document.getElementById("massrat").innerHTML = "Trọng lượng : " + mouse.mass + " kg";
+            document.getElementById("masscat").innerHTML = "Trọng lượng : " + cat.mass + " kg";
+        } else {
+            alert("the end");
+        }
+    }
+</script>
+
+</html>
