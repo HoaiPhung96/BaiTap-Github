@@ -9,18 +9,54 @@
 </head>
 
 <body>
+    <fieldset>
+        <legend>Bài 3</legend>
+        <div id="result"></div>
+    </fieldset>
+    <fieldset>
+        <legend>Bài 4</legend>
+        Mảng cho sẵn: 10, 11, 13, 9, 20. &nbsp;&nbsp;&nbsp;
+        <input type="button" value="Đảo mã" id="input4" onclick="daoma();">
+        <div id="result4"></div>
+    </fieldset>
+    <fieldset>
+        <legend>Bài 6</legend>
+        <input type="number" id="sonam">
+        <input type="button" value="kiem tra gia tri" onclick="kiemtra()">
+        <div id="result6"></div>
+    </fieldset>
 </body>
 
 <script>
-    function ready() {
-        document.getElementById("bai1").onclick = function() {
-            let arrNumber = [];
-            let count = 0;
-            for (let i = 0; i < 10; i++) {
-                arrNumber[i] = parseInt(prompt("Nhập mảng"));
-                if (arrNumber[i] >= 10) count++;
+    let inputArray = new Array(5, 3, 2, 7, 11, 19, 9, 20, 10, 30);
+    let max = inputArray[0];
+    let diem = inputArray[0];
+    for (let i = 1; i < inputArray.length; i++) {
+        if (max < inputArray[i]) {
+            max = inputArray[i];
+        }
+        diem += inputArray[i];
+    }
+    document.getElementById("result").innerHTML = 'giá trị lớn nhất trong mảng ' + max + ' giá trị trung bình của mảng ' + diem / inputArray.length;
+    //bài 4
+    let array = [10, 11, 13, 9, 20];
+
+    function daoma() {
+        array = array.reverse();
+        document.getElementById('result4').innerHTML = array;
+    }
+    //bài 6
+    let arr = [10, 11, 13, 9, 20, 2, 5, 7, 12, 25];
+
+    function kiemtra() {
+        for (let i = 0; i < arr.length; i++) {
+            let v = parseInt(document.getElementById("sonam").value);
+            if (arr[i] === 5) {
+                document.getElementById('result6').innerHTML = 'V is in the array' + ' vi tri ' + i;
+                break;
+            } else {
+                document.getElementById('result6').innerHTML = 'V is not in the array';
             }
-            alert("Có " + count + " số lớn hơn 10");
         }
     }
 </script>
