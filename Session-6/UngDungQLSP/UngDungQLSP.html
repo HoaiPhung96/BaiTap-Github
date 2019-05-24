@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng QLSP Mảng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Add New Product</h3>
+    <div class="container">
+        <form action="javascript:void(0);" method="POST" onsubmit="app.add()">
+            <input type="text" id="add-name" placeholder="New Product">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+
+    <h3>Display All Product</h3>
+    <table>
+        <tr>
+            <th style="text-align: left;">STT</th>
+            <th style="text-align: center;">Product Name</th>
+            <th style="text-align: right; color:brown" colspan="2">
+                <p id="counter"></p>
+            </th>
+        </tr>
+        <tbody id="products">
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+
+    <div id="spoiler" role="aria-hidden">
+        <h3>Edit Product</h3>
+        <div class="container">
+            <form action="javascript:void(0);" method="POST" id="saveEdit">
+                <input type="text" id="edit-name">
+                <input type="submit" value="Edit" /> <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+    </div>
+    </p>
+
+</body>
+
+</html>
