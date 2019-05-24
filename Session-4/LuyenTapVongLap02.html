@@ -3,20 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Luyen Tap Vong Lap 2</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <title>Luyện tập vòng lặp 02</title>
 </head>
 
 <body>
+    <fieldset>
+        <b><legend>Bài 1: In dãy Finonaci</legend></b>
+        <input type="text" id="nhap1">
+        <input type="button" value="Fibonaci" class="btn btn-info" onclick=" showFibonaci() ">
+        <div id="result1"></div>
+    </fieldset>
+    <fieldset>
+        <b><legend>Bài 2: Tính giai thừa</legend></b>
+        <input type="text" id="nhap2">
+        <input type="button" value="Kiểm tra" class="btn btn-info" onclick=" printFact() ">
+        <div id="result2"></div>
+    </fieldset>
+    <script>
+        // bài 1
+        function showFibonaci() {
+            let num = document.getElementById('nhap1').value;
+            document.getElementById('result1').innerHTML = "Dãy Fibonaci của " + num + " là: " + fibonaci(num);
+        }
 
+        function fibonaci(num) {
+            var a = 1,
+                b = 0,
+                temp;
+            while (num >= 0) {
+                temp = a;
+                a = a + b;
+                b += temp;
+                num--;
+            }
+            return b;
+        }
+        document.getElementById(fibonaci());
+        //bài 2
+        function printFact() {
+            let numGt = document.getElementById('nhap2').value;
+            document.getElementById('result2').innerHTML = "Giai thừa của " + numGt + " là: " + findFact(numGt);
+        }
+
+        function findFact(numGt) {
+            var fact = 1;
+            for (var i = numGt; i > 0; i--) {
+                fact = fact * i;
+            }
+            return fact;
+        }
+    </script>
 </body>
-<script>
-    let text = "*"
-    for (let i = 1; i < 5; i++) {
-        for (var j = 1; j <= 6 - 1; j++)
-            document.write(text);
-    }
-</script>
 
 </html>
