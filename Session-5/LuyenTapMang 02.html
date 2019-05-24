@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ThaoTacVoiMang</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <b>Bài 1 đảo ngược mãng</b>
+        </legend>
+        <div id="result1"></div>
+    </fieldset>
+    <fieldset>
+        <legend><b>Bài 2</b></legend>
+        <input type="button" value="Number" onclick="bai2();">
+        <span id="result2"></span>
+    </fieldset>
+</body>
+
+<script>
+    let arr = ['c', 's', 'c', '2', '6', '1'];
+    arr.reverse(arr);
+    document.getElementById('result1').innerHTML = "<b>" + arr.join('');
+</script>
+
+</html>
