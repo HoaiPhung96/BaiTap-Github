@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ThaoTacVoiMang</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Bài1: Chuyển Đổi Nhiệt Độ</legend>
+        <input type="" id="input1">
+        <input type="button" value="Conver" onclick="chuyenDoi();">
+        <div id="result1"></div>
+    </fieldset>
+</body>
+
+<script>
+    function chuyenDoi() {
+        let Celsius;
+        Celsius = document.getElementById('input1').value;
+        c = parseInt(Celsius);
+        fahrenheit = (9 * c) / 5 + 32;
+        document.getElementById("result1").innerHTML = 'Độ Fahrenheit ' + fahrenheit;
+    }
+</script>
+
+</html>
