@@ -1,0 +1,22 @@
+.khung {
+    width: 160px;
+    height: 5430x;
+    border: black 3px solid;
+    border-radius: 4px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 860px;
+    height: 500px;
+}
+
+.remote {
+    width: 100px;
+    height: 100px;
+}
+
+.video {
+    margin-top: -485px;
+}

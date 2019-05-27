@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h3>Phát triển chương trình sử dụng Remote để điều khiển Tivi</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9">
+                <div class="text-center">
+                    <div>
+
+                        <img src="images/imageTV.png">
+                        <div class="video">
+                            <iframe width="824" height="394" src="" id="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="text-center">
+                    <div class="khung">
+                        <div class="menu">
+                            <input type="image" alt="Login" src="https://img.icons8.com/flat_round/36/000000/mute.png" value="mute" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/nolan/40/000000/microphone.png" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/shutdown.png" id="status" onclick="status()">
+                            </br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/1-circle-c.png" value="btn1" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/2-circle-c.png" value="btn2" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/3-circle-c.png" value="btn3" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/4-circle-c.png" value="btn4" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/5-circle-c.png" value="btn5" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/6-circle-c.png" value="btn6" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/7-circle-c.png" value="btn7" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/8-circle-c.png" value="btn8" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/9-circle-c.png" value="btn9" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/color/40/000000/0-circle-c.png" value="btn0" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/nolan/40/000000/chevron-up.png" value="btnup" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/nolan/40/000000/chevron-left.png" value="btnleft" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/ios/40/000000/ok-message-filled.png" value="" onclick="channels(this.value)">&nbsp;
+                            <input type="image" alt="Login" src="https://img.icons8.com/nolan/40/000000/chevron-right.png" value="btnright" onclick="channels(this.value)">
+                            <br>
+                            <input type="image" alt="Login" src="https://img.icons8.com/nolan/40/000000/chevron-down.png" value="btndown" onclick="channels(this.value)">
+                            <br><br>
+                            <h4>
+                                <b>Sony - TV</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    //remote
+function Remote() {
+    this.id = "";	   
+    this.increaseVolume = function(tivi) {
+     increaseVolume(tivi)
+        if (tivi.volume < 100)	       
+            tivi.volume++;	           
+    }	 
+    this.reductionVolume = function(tivi) {	    
+        if (tivi.volume > 0)	        
+            tivi.volume--;	            
+    }	   
+    this.convertChannels = function(tivi) {;	    
+        switch (this.id) {	        
+            case "1":	           
+                return tivi.channels[1];
+        }
+    //tvi
+function Tivi() {
+    this.channels = [];
+    this.channels[1] = 'https://www.youtube.com/embed/RYZXp7ugYXo';	        
+    this.channels[2] = 'https://www.youtube.com/embed/QdXdx9IaakA';	        
+    this.channels[3] = 'https://www.youtube.com/embed/Llw9Q6akRo4';	        
+    this.channels[4] = 'https://www.youtube.com/embed/dXjcjpSd2jc';	        
+    this.channels[5] = 'https://www.youtube.com/embed/t5FtA5CqmaY';	        
+    this.channels[6] = 'https://www.youtube.com/embed/BonY1mVb0Qc';	        
+    this.channels[7] = 'https://www.youtube.com/embed/meqLjGa_WC8';	        
+    this.channels[8] = 'https://www.youtube.com/embed/LqRIBRMaUvs';	        
+    this.channels[9] = 'https://www.youtube.com/embed/2lQ5OPtULmg';	        
+    this.volum = 0;	        
+    this.status = false;
+
+    //dosomthing
+    let remote;
+let tivi;
+let videoHtml;
+let statusHtml;
+
+function channels(valueButton) {
+    remote.id = valueButton;
+    console.log(tivi.status);
+    if (tivi.status === true) {
+        videoHtml.src = remote.convertChannels(tivi);
+    }
+}
+
+function status() {
+    console.log(tivi.status);
+    if (tivi.status === true) {
+        videoHtml.style.display = "none";
+        statusHtml.style.display = "block";
+        tivi.status = false;
+        location.reload();
+    } else {
+        tivi.status = true;
+        statusHtml.style.display = "none";
+        videoHtml.style.display = "block";
+    }
+}
+
+window.onload = function() {
+    tivi = new Tivi();
+    remote = new Remote();
+    videoHtml = document.getElementById("video");
+    statusHtml = document.getElementById("channels");
+}
+    </script>
+</html>
