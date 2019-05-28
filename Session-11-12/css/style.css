@@ -1,0 +1,57 @@
+canvas {
+    background: #dddddd;
+    display: block;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #fff000;
+    text-align: center;
+    font-family: 'Cabin', monospace;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10px;
+}
+
+div {
+    margin-right: 1px;
+}
+
+.button {
+    background-color: #004A7F;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+@keyframes glowing {
+    0% {
+        background-color: #ff0000;
+        box-shadow: 0 0 3px #ff0000;
+    }
+    50% {
+        background-color: #0094FF;
+        box-shadow: 0 0 10px #0094FF;
+    }
+    100% {
+        background-color: #00ff22;
+        box-shadow: 0 0 3px #00ff22;
+    }
+}
+
+.button {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
