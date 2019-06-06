@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 4 | Vẽ Hình Chữ Nhật</title>
+</head>
+
+<body>
+    <h2>Câu 4: Vẽ Hình Chữ Nhật</h2>
+    <canvas id="myCanvas" width="600px" height="400px" style="border:3px solid #ff0000; border-radius: 5px"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(toadoX, toadoY, width, height, color) {
+            this.toadoX = toadoX;
+            this.toadoY = toadoY;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+        render() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.toadoX, this.toadoY, this.width, this.height);
+        }
+    }
+    let vehcn = new Rectangle(10, 10, 200, 100, "#000000");
+    vehcn.render();
+</script>
+
+</html>

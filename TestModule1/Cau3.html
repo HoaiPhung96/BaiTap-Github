@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 3 | Kiểm Tra Số Nguyên Tố </title>
+</head>
+
+<body>
+    <h2>Câu 3: Kiểm tra số nguyên tố</h2>
+</body>
+<script>
+    function isPrime(num) {
+        for (let i = 2; i < num; i++)
+            if (num % i === 0) return false;
+        return num !== 1 && num !== 0;
+    }
+    document.write("<b>" + isPrime(12), "<br>" + isPrime(17));
+</script>
+
+</html>

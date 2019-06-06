@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 2 | Remove From Array</title>
+</head>
+
+<body>
+    <h2>Câu 2: Loại bỏ phần tử trong mảng</h2>
+</body>
+<script>
+    let array = [12, 6, 3, 7, 21, 5, 7];
+    let index = 2;
+
+    function tryRemoveFromArray(array, index) {
+        if (index >= 0 && index < array.length) {
+            for (let i = index; i < array.length; i++) {
+                array[i] = array[i + 1];
+                array.unshift();
+            }
+            document.write("<b>Loại bỏ phần tử với vị trí index là: " + index + " mảng mới là: " + array);
+        } else {
+            document.write("<b>Vị trí index = " + index + " không có trong mảng. Mảng giữ nguyên: " + array);
+        }
+    }
+    tryRemoveFromArray(array, index);
+</script>
+
+</html>

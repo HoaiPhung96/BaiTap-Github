@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thi Module 1</title>
+    <style>
+        #myCanvas {
+            background-color: rgb(247, 247, 247);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="800" height="600px" style="border:4px solid #1a1f1d"></canvas>
+</body>
+<script>
+    const CIRCLE_X = 100;
+    const CIRCLE_Y = 100;
+    const CIRCLE_RADIUS = 50;
+    const CIRCLE_COLOR = "blue"
+
+    class Rectangle {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+
+        render() {
+            let canvas = document.getElementById("myCanvas");
+            let context = canvas.getContext("2d");
+            context.beginPath();
+            context.fillStyle = this.color;
+            context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            context.fill();
+
+
+        }
+    }
+
+    let rectangle = new Rectangle(CIRCLE_X, CIRCLE_Y, CIRCLE_RADIUS, CIRCLE_COLOR);
+    rectangle.render();
+</script>
+
+</html>

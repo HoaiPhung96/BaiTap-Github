@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 1| Find Min</title>
+</head>
+
+<body>
+    <h2>Câu 1: Tìm điểm thấp nhất trong mảng</h2>
+</body>
+<script>
+    let arrayScore = [8, 6, 2, 6, 1, 1, 4];
+    let min = arrayScore[0];
+
+    function findMinScore(arrayScore) {
+        for (let i = 0; i < arrayScore.length; i++) {
+            if (min > arrayScore[i]) {
+                min = arrayScore[i];
+            }
+        }
+        return min;
+    }
+    findMinScore(arrayScore);
+    document.write("<b>Số điểm thấp nhất trong mảng là: " + min);
+</script>
+
+</html>
