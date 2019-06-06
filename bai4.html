@@ -22,7 +22,7 @@
     const CIRCLE_RADIUS = 50;
     const CIRCLE_COLOR = "blue"
 
-    class Rectangle {
+    class Circle {
         constructor(x, y, radius, color) {
             this.x = x;
             this.y = y;
@@ -37,13 +37,11 @@
             context.fillStyle = this.color;
             context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
             context.fill();
-
-
         }
     }
 
-    let rectangle = new Rectangle(CIRCLE_X, CIRCLE_Y, CIRCLE_RADIUS, CIRCLE_COLOR);
-    rectangle.render();
+    let circle = new Circle(CIRCLE_X, CIRCLE_Y, CIRCLE_RADIUS, CIRCLE_COLOR);
+    circle.render();
 </script>
 
 </html>
